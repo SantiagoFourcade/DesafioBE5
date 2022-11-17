@@ -1,8 +1,10 @@
 const express = require("express")
 const morgan = require("morgan")
 
+const router = require("./routerr/router")
+
 const app = express()
-const static =__direname
+const statics =__dirname.replace("app", "public")
 
 console.log("static")
 
@@ -11,9 +13,9 @@ app.set("views", "./src/public/views")
 app.set("view engine", "pug")
 
 app.use(morgan("nodemon"))
+app.use(express.static(statics))
+app.use(router)
 
-app.get("/", (req, res) => {
-    res.render("pages/index")
-})
+
 
 module.exports = app
