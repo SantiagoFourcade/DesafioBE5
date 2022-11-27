@@ -1,0 +1,27 @@
+<h2 class="title">Datos Ingresados</h2>
+
+<% const losProductos = productos.length > 0; %>
+<% if(losProductos){ %>
+<table class="historial">
+    <tr class="info">
+        <th>Nombre</th>
+        <th>tipo</th>
+        <th>cantidad</th>
+    </tr>
+    <% for (const producto of productos) {%>
+    <tr>
+        <td>
+            <%=producto.nombre%>
+        </td>
+        <td>
+            <%=producto.tipo%>
+        </td>
+        <td>
+            <%=producto.cantidad%>
+        </td>
+    </tr>
+    <%};%>
+</table>
+<% } else { %>
+<h3>datos no disponibles</h3>
+<% } %>
